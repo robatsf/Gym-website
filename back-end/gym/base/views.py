@@ -4,7 +4,8 @@ from base.serializers import userRegistrationSerializer, membershipSerializer
 from rest_framework import generics
 
 
-class userview(generics.ListCreateAPIView):
+
+class userRegistrationview(generics.ListCreateAPIView):
     queryset = userRegistration.objects.all()
     serializer_class = userRegistrationSerializer
 
