@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from .models import subscription,subscriptionPlan
 
 class UserSerializer(serializers.ModelSerializer):
     password2=serializers.CharField(style={'input_type':'password'},write_only=True)
@@ -24,3 +25,12 @@ class UserSerializer(serializers.ModelSerializer):
         account.save()
         return account
 
+class subscriptionPlanSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = subscriptionPlan
+            fields ='__all__'
+
+class subscriptionserializer(serializers.ModelSerializer):
+     class Meta:
+        model=subscription
+        fields = '__all__'
